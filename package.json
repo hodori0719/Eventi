@@ -1,0 +1,27 @@
+{
+  "name": "eventi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/bot.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hodori0719/Eventi.git"
+  },
+  "keywords": [],
+  "author": "hodori0719",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hodori0719/Eventi/issues"
+  },
+  "homepage": "https://github.com/hodori0719/Eventi#readme",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.0",
+    "chalk": "^4.1.2",
+    "discord-api-types": "^0.36.3",
+    "discord.js": "^14.0.3",
+    "dotenv": "^16.0.1"
+  }
+}
