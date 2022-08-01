@@ -2,8 +2,8 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('ping')
-        .setDescription('Return my ping!'),
+        .setName('help')
+        .setDescription('Get the list of Eventi commands'),
     async execute(interaction, client) {
         const message =  await interaction.deferReply({
             fetchReply: true
