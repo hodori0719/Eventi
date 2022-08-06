@@ -1,8 +1,10 @@
 require('dotenv').config();
 
-const { token } = process.env;
+const { token, dbToken } = process.env;
+const { connect } = require('mongoose');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const fs = require('fs');
+const { CLIENT_RENEG_LIMIT } = require('tls');
 
 const client = new Client({ intents: GatewayIntentBits.Guilds })
 client.commands = new Collection();
@@ -21,3 +23,6 @@ client.handleEvents();
 client.handleCommands();
 client.handleComponents();
 client.login(token);
+(async () => {
+    connect(dbToken).catch(console.error);
+})();

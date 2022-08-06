@@ -1,3 +1,5 @@
+const User = require('../../schemas/user');
+const mongoose = require('mongoose');
 const { SlashCommandBuilder, ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
 
 module.exports = {
@@ -14,6 +16,15 @@ module.exports = {
                 )
         ),
     async execute(interaction, client) {
+        let userProfile = await User.findOne({ userId: interaction.user.id });
+        if (!userProfile.userTimeZone){
+            await interaction.reply({
+                content: '**ERROR**: you must set your timezone with /timezone before using this command.',
+                ephemeral: true,
+              });
+              return;
+        }
+
         const modal = new ModalBuilder()
             .setCustomId('new-event')
             .setTitle('Create New Event');
