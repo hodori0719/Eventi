@@ -2,6 +2,8 @@
 
 A Discord bot which expands the built-in Event function for community-wide use.
 
+To build, Eventi requires a Discord Application token from the Discord Developer Portal and a Google Calendar synth account added to the .env file.
+
 ## Features: ##
 **Create events through slash command**
 - Allows users to create events with slash command, removing the need for role assignment which can manage events
