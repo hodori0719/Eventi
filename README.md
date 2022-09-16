@@ -2,7 +2,7 @@
 
 A Discord bot which expands the built-in Event function for community-wide use.
 
-To build, Eventi requires a Discord Application token from the Discord Developer Portal and a Google Calendar synth account added to the .env file.
+To build, Eventi requires a Discord Application token from the Discord Developer Portal and a Google Calendar synth account added to the .env file. Also requires a MongoDB database.
 
 ## Features: ##
 **Create events through slash command**
