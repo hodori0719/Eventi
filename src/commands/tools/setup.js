@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const Guild = require('../../schemas/guild');
 const mongoose = require('mongoose');
 
@@ -32,7 +32,8 @@ const auth = new google.auth.GoogleAuth({
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('setup')
-        .setDescription('Configure Eventi for your server (admin)'),
+        .setDescription('Configure Eventi for your server (admin)')
+        .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     async execute(interaction, client) {
         let guildProfile = await Guild.findOne({ guildId: interaction.guild.id });
 

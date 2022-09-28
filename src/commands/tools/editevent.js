@@ -24,7 +24,7 @@ module.exports = {
               return;
         }
         let userProfile = await User.findOne({ userId: interaction.user.id });
-        if (!userProfile.userTimeZone){
+        if (!userProfile || !userProfile.userTimeZone){
             await interaction.reply({
                 content: '**ERROR**: you must set your timezone with /timezone before using this command.',
                 ephemeral: true,
